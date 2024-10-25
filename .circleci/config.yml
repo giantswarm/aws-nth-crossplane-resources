@@ -9,9 +9,6 @@ workflows:
           context: architect
           executor: app-build-suite
           name: package-and-push-chart
-          app_catalog: giantswarm-playground-catalog
-          app_catalog_test: giantswarm-playground-test-catalog
-          chart: "aws-nth-crossplane-resources"
           # Trigger job on git tag.
           filters:
             tags:
