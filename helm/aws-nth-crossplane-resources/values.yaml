@@ -1,12 +1,16 @@
 name: aws-nth-crossplane-resources
 serviceType: managed
 
+clusterName: ""
+accountID: ""
+baseDomain: ""
+awsPartition: ""
+region: ""
+oidcDomain: ""
+oidcDomains: []
+awsCluster:
+  vpcId: ""
+
 project:
   branch: "[[ .Branch ]]"
   commit: "[[ .SHA ]]"
-
-image:
-  registry: quay.io
-  name: giantswarm/aws-nth-crossplane-resources
-  tag: v0.0.1
-  pullPolicy: IfNotPresent

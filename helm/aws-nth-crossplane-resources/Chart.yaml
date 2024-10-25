@@ -8,6 +8,7 @@ name: aws-nth-crossplane-resources
 description: Please add description
 
 home: https://github.com/giantswarm/aws-nth-crossplane-resources
+icon: https://s.giantswarm.io/app-icons/aws/2/light.svg
 
 # If you have an icon/logo, you should add it to https://github.com/giantswarm/web-assets
 # and set the final URL as a value here and uncomment.
