@@ -76,7 +76,7 @@ spec:
                   ],
                   "Principal": {
                       "Service": [
-                          "ec2.amazonaws.com"
+                          "autoscaling.amazonaws.com"
                       ]
                   }
               }
