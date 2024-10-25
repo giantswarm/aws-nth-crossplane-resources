@@ -24,7 +24,7 @@ spec:
             "Action": "sts:AssumeRoleWithWebIdentity",
             "Condition": {
               "StringLike": {
-                "{{.Values.oidcDomain}}:sub": "system:serviceaccount:*:*node-termination-handler*"
+                "{{.Values.oidcDomain}}:sub": "system:serviceaccount:kube-system:aws-node-termination-handler"
               }
             }
           }
