@@ -11,6 +11,7 @@ workflows:
           name: package-and-push-chart
           app_catalog: "giantswarm-catalog"
           app_catalog_test: "giantswarm-test-catalog"
+          chart: "aws-nth-crossplane-resources"
           # Trigger job on git tag.
           filters:
             tags:
