@@ -16,6 +16,9 @@ spec:
       sigs.k8s.io/cluster-api-provider-aws/cluster/{{.Values.clusterName}}: owned
     region: {{.Values.region}}
     messageRetentionSeconds: 300
+  writeConnectionSecretToRef:
+    name: {{.Values.clusterName}}-nth-sqs-connection
+    namespace: {{.ReleaseNamespace}}
 ---
 apiVersion: sqs.aws.upbound.io/v1beta1
 kind: QueuePolicy
