@@ -18,7 +18,7 @@ spec:
     messageRetentionSeconds: 300
   writeConnectionSecretToRef:
     name: {{.Values.clusterName}}-nth-sqs-connection
-    namespace: "org-giantswarm"
+    namespace: {{ $.Release.Namespace }}
 ---
 apiVersion: sqs.aws.upbound.io/v1beta1
 kind: QueuePolicy
