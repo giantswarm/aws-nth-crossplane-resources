@@ -1,7 +1,7 @@
 apiVersion: sqs.aws.upbound.io/v1beta1
 kind: Queue
 metadata:
-  name: {{.Values.clusterName}}-nth
+  name: {{ required "clusterName is required" .Values.clusterName }}-nth
   namespace: {{ $.Release.Namespace }}
   labels:
     {{- include "labels.common" . | nindent 4 }}
@@ -14,7 +14,7 @@ spec:
       giantswarm.io/cluster: {{.Values.clusterName}}
       giantswarm.io/used-for: termination-handler
       sigs.k8s.io/cluster-api-provider-aws/cluster/{{.Values.clusterName}}: owned
-    region: {{.Values.region}}
+    region: {{ required "region is required" .Values.region }}
     messageRetentionSeconds: 300
   writeConnectionSecretToRef:
     name: {{.Values.clusterName}}-nth-sqs-connection
@@ -52,3 +52,57 @@ spec:
       }
     queueUrlRef:
       name: {{.Values.clusterName}}-nth
+---
+# Apart from ASG lifecycle hook events, which are sent by creating a hook via
+# `AWSCluster.spec.lifecycleHooks`, also send EC2 state change and spot instance interruption
+# events to the SQS queue as well so aws-node-termination-handler can react to them.
+apiVersion: cloudwatchevents.aws.upbound.io/v1beta1
+kind: Rule
+metadata:
+  name: {{.Values.clusterName}}-nth-events
+  namespace: {{.ReleaseNamespace}}
+  labels:
+    {{- include "labels.common" . | nindent 4 }}
+
+    # Rule selector used in the below `Target`
+    giantswarm.io/cluster: {{.Values.clusterName}}
+    giantswarm.io/used-for: nth-events
+spec:
+  providerConfigRef:
+    name: {{.Values.clusterName}}
+  forProvider:
+    tags:
+      giantswarm.io/cluster: {{.Values.clusterName}}
+      sigs.k8s.io/cluster-api-provider-aws/cluster/{{.Values.clusterName}}: owned
+    region: {{.Values.region}}
+    eventBusName: default
+    eventPattern: |
+      {
+        "source": [
+          "aws.ec2"
+        ],
+        "detail-type": [
+          "EC2 Instance State-change Notification",
+          "EC2 Spot Instance Interruption Warning"
+        ]
+      }
+---
+apiVersion: cloudwatchevents.aws.upbound.io/v1beta1
+kind: Target
+metadata:
+  name: {{.Values.clusterName}}-nth-events
+  namespace: {{.ReleaseNamespace}}
+  labels:
+    {{- include "labels.common" . | nindent 4 }}
+spec:
+  providerConfigRef:
+    name: {{.Values.clusterName}}
+  forProvider:
+    arn: arn:{{.Values.awsPartition}}:sqs:{{.Values.region}}:{{.Values.accountID}}:{{.Values.clusterName}}-nth
+    region: {{.Values.region}}
+    eventBusName: default
+    targetId: nth-events
+    ruleSelector:
+      matchLabels:
+        giantswarm.io/cluster: {{.Values.clusterName}}
+        giantswarm.io/used-for: nth-events
