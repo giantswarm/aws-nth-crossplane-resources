@@ -60,7 +60,7 @@ apiVersion: cloudwatchevents.aws.upbound.io/v1beta1
 kind: Rule
 metadata:
   name: {{.Values.clusterName}}-nth-events
-  namespace: {{.ReleaseNamespace}}
+  namespace: {{ $.Release.Namespace }}
   labels:
     {{- include "labels.common" . | nindent 4 }}
 
@@ -91,7 +91,7 @@ apiVersion: cloudwatchevents.aws.upbound.io/v1beta1
 kind: Target
 metadata:
   name: {{.Values.clusterName}}-nth-events
-  namespace: {{.ReleaseNamespace}}
+  namespace: {{ $.Release.Namespace }}
   labels:
     {{- include "labels.common" . | nindent 4 }}
 spec:
