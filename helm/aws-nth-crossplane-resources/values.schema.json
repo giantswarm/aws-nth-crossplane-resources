@@ -29,7 +29,10 @@
             "type": "string"
         },
         "oidcDomains": {
-            "type": "array"
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
         },
         "project": {
             "type": "object",
