@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Add support for multiple OIDC providers in the NTH IAM role
+- Included the `giantswarm.io/cluster` label
 
 ## [1.1.0] - 2024-12-11
 
