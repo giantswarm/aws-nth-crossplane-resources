@@ -13,6 +13,7 @@ spec:
     tags:
       giantswarm.io/cluster: {{.Values.clusterName}}
       giantswarm.io/used-for: termination-handler
+      giantswarm.io/managed-by: {{ .Release.Name | quote }}
       sigs.k8s.io/cluster-api-provider-aws/cluster/{{.Values.clusterName}}: owned
     region: {{ required "region is required" .Values.region }}
     messageRetentionSeconds: 300
@@ -73,6 +74,7 @@ spec:
   forProvider:
     tags:
       giantswarm.io/cluster: {{.Values.clusterName}}
+      giantswarm.io/managed-by: {{ .Release.Name | quote }}
       sigs.k8s.io/cluster-api-provider-aws/cluster/{{.Values.clusterName}}: owned
     region: {{.Values.region}}
     eventBusName: default
