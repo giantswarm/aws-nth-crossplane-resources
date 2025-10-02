@@ -22,7 +22,7 @@ spec:
           {{- if not (eq $index 0) }}, {{ end }}{
             "Effect": "Allow",
             "Principal": {
-              "Federated": "arn:{{.Values.awsPartition}}:iam::{{.Values.accountID}}:oidc-provider/{{$oidcDomain}}"
+              "Federated": "arn:{{ required "awsPartition from aws-crossplane-cluster-config-operator is not filled yet" $.Values.awsPartition }}:iam::{{ required "accountID from aws-crossplane-cluster-config-operator is not filled yet" $.Values.accountID }}:oidc-provider/{{ $oidcDomain }}"
             },
             "Action": "sts:AssumeRoleWithWebIdentity",
             "Condition": {
