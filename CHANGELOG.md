@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2025-10-02
+
 ### Added
 
 - Add `giantswarm.io/managed-by` tag to AWS Resources.
@@ -28,7 +30,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - changed: `app.giantswarm.io` label group was changed to `application.giantswarm.io`
 
-[Unreleased]: https://github.com/giantswarm/aws-nth-crossplane-resources/compare/v1.1.1...HEAD
+[Unreleased]: https://github.com/giantswarm/aws-nth-crossplane-resources/compare/v1.2.0...HEAD
+[1.2.0]: https://github.com/giantswarm/aws-nth-crossplane-resources/compare/v1.1.1...v1.2.0
 [1.1.1]: https://github.com/giantswarm/aws-nth-crossplane-resources/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/giantswarm/aws-nth-crossplane-resources/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/giantswarm/aws-nth-crossplane-resources/releases/tag/v1.0.0
