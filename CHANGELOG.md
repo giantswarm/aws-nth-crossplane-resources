@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.0] - 2025-10-06
+
 ### Added
 
 - Add permissions `autoscaling:DescribeLifecycleHooks` and `autoscaling:RecordLifecycleActionHeartbeat` because aws-node-termination-handler needs them for the heartbeat sending feature
@@ -38,7 +40,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - changed: `app.giantswarm.io` label group was changed to `application.giantswarm.io`
 
-[Unreleased]: https://github.com/giantswarm/aws-nth-crossplane-resources/compare/v1.2.0...HEAD
+[Unreleased]: https://github.com/giantswarm/aws-nth-crossplane-resources/compare/v1.3.0...HEAD
+[1.3.0]: https://github.com/giantswarm/aws-nth-crossplane-resources/compare/v1.2.0...v1.3.0
 [1.2.0]: https://github.com/giantswarm/aws-nth-crossplane-resources/compare/v1.1.1...v1.2.0
 [1.1.1]: https://github.com/giantswarm/aws-nth-crossplane-resources/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/giantswarm/aws-nth-crossplane-resources/compare/v1.0.0...v1.1.0
