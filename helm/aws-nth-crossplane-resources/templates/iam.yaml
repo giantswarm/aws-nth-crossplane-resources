@@ -45,7 +45,9 @@ spec:
                 "Action": [
                   "autoscaling:CompleteLifecycleAction",
                   "autoscaling:DescribeAutoScalingInstances",
+                  "autoscaling:DescribeLifecycleHooks",
                   "autoscaling:DescribeTags",
+                  "autoscaling:RecordLifecycleActionHeartbeat",
                   "ec2:DescribeInstances",
                   "sqs:DeleteMessage",
                   "sqs:ReceiveMessage"

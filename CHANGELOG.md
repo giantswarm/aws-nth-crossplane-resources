@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Add permissions `autoscaling:DescribeLifecycleHooks` and `autoscaling:RecordLifecycleActionHeartbeat` because aws-node-termination-handler needs them for the heartbeat sending feature
+
 ### Fixed
 
 - Fix rendering of OIDC providers in Helm template
