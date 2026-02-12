@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Removed duplicated `giantswarm.io/cluster` label in crossplane `Rule` resource.
+
 ## [1.3.1] - 2026-02-12
 
 ### Fixed
