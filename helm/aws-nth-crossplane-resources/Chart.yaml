@@ -1,11 +1,11 @@
 apiVersion: v2
-appVersion: 1.3.1
+appVersion: 1.3.2
 name: aws-nth-crossplane-resources
 description: Please add description
 home: https://github.com/giantswarm/aws-nth-crossplane-resources
 icon: https://s.giantswarm.io/app-icons/aws/2/light.svg
 sources:
   - https://github.com/giantswarm/aws-nth-crossplane-resources
-version: 1.3.1
+version: 1.3.2
 annotations:
   application.giantswarm.io/team: phoenix
