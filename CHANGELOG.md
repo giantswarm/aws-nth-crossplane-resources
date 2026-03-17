@@ -9,8 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Add `io.giantswarm.application.audience: giantswarm` annotation.
-- Migrate chart metadata annotations to `io.giantswarm.application.*` format.
+- Migrate chart metadata annotations to `io.giantswarm.application.*` format, replacing `application.giantswarm.io/team` with `io.giantswarm.application.team`.
+- Add `io.giantswarm.application.audience: all` annotation.
+- Add `io.giantswarm.application.managed: "true"` annotation.
+- Add `io.giantswarm.application.restrictions.compatible-providers: "aws"` annotation.
 
 ## [1.3.2] - 2026-02-14
 
