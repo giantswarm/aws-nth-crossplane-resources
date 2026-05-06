@@ -1,6 +1,10 @@
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/giantswarm/aws-nth-crossplane-resources/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/giantswarm/aws-nth-crossplane-resources/tree/main)
 
-# AWS Node Termination Handler Crossplane Resources
+# [DEPRECATED] AWS Node Termination Handler Crossplane Resources
+
+**DEPRECATED**: this repo is deprecated. The resources deployed by this Helm chart have been integrated in https://github.com/giantswarm/aws-nth-bundle
+
+---
 
 This app contains all the resources needed for Node Termination Handler to work on any management/workload cluster.
 
@@ -16,5 +20,3 @@ Resources created:
 ## Why this name for the app and not the full name?
 
 The full name would not work for clusters with 20 characters name.
-
-
